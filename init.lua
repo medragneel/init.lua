@@ -1,2 +1,2 @@
 require("medmh")
-print("hello from init")
+print("Welcome Medmh")
