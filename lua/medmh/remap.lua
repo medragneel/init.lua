@@ -1,3 +1,4 @@
+
 vim.g.mapleader = ","
 --vim.api.nvim_set_keymap("n","<leader>e","<cmd>tabe <CR><cmd>Ex<CR>")
 vim.keymap.set("n","<leader>e","<cmd>tabe <CR><cmd>Ex<CR>")
@@ -31,3 +32,11 @@ vim.keymap.set("n", "<leader>Y", [["+Y]])
 vim.keymap.set("n","<leader>c","\"+y")
 vim.keymap.set("v","<leader>c","\"+y")
 vim.keymap.set("n","<leader>v","\"+p")
+
+--init.lua
+vim.keymap.set("n","cf","<cmd>tabe ~/.config/nvim/<CR>")
+vim.keymap.set("n","<leader>cs","<cmd>luafile ~/.config/nvim/init.lua<CR>")
+vim.keymap.set("n","<leader>sr","<cmd>luafile % <CR>")
+
+
+
