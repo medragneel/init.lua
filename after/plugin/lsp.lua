@@ -8,6 +8,16 @@ lsp.ensure_installed({
     'sumneko_lua',
     'rust_analyzer',
 })
+lsp.configure('sumneko_lua', {
+    settings = {
+        Lua = {
+            diagnostics = {
+                globals = { 'vim' }
+            }
+        }
+    }
+})
+
 
 local _, cmp = pcall(require, "cmp")
 local cmp_select = { behavior = cmp.SelectBehavior.Select }
@@ -41,17 +51,10 @@ lsp.set_preferences({
     }
 })
 
-vim.diagnostic.config({
-    virtual_text = true,
-})
 
 lsp.on_attach(function(client, bufnr)
     local opts = { buffer = bufnr, remap = false }
 
-    if client.name == "eslint" then
-        vim.cmd.LspStop('eslint')
-        return
-    end
 
     vim.keymap.set("n", "gd", vim.lsp.buf.definition, opts)
     vim.keymap.set("n", "K", vim.lsp.buf.hover, opts)
@@ -67,3 +70,6 @@ lsp.on_attach(function(client, bufnr)
 end)
 
 lsp.setup()
+vim.diagnostic.config({
+    virtual_text = true
+})

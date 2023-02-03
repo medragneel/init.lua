@@ -1,25 +1,41 @@
-
 require('lualine').setup {
     options = {
-        icons_enabled = true,
-        component_separators = { left = '', right = ''},
-        section_separators = { left = '', right = ''},
+        icons_enabled = false,
+        theme = 'auto',
+        component_separators = { left = '', right = '' },
+        section_separators = { left = '', right = '' },
     },
 
-     sections = {
-        lualine_a = { "mode" },
-        lualine_b = { "branch", "diff", "diagnostics" },
+    sections = {
+        lualine_a = {
+            "mode",
+            {
+                file_status = true,
+                newfile_status = true,
+                shorting_target = 40,
+                path = 0,
+                symbols = {
+                    modified = '[+]', -- Text to show when the file is modified.
+                    readonly = '[-]', -- Text to show when the file is non-modifiable or readonly.
+                    unnamed = '[No Name]', -- Text to show for unnamed buffers.
+                    newfile = '[New]', -- Text to show for new created file before first writting
+                }
+
+            },
+
+        },
+        lualine_b = { "branch", "diagnostics","tabs" },
         lualine_c = {
             {
                 "%f",
                 color = {
-                    gui = "bold",
+                    gui = "italic",
                 },
             },
         },
-        lualine_x = {},
+        lualine_x = { "location" },
         lualine_y = {},
-        lualine_z = { "fileformat", "filetype" },
+        lualine_z = { "filetype" },
     },
     inactive_sections = {
         lualine_a = {},
@@ -30,6 +46,5 @@ require('lualine').setup {
         lualine_z = {},
     },
     tabline = {},
-    extensions = {},
+    extensions = {"quickfix"},
 }
-
