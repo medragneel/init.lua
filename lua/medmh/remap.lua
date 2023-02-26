@@ -19,6 +19,7 @@ vim.keymap.set("n", "<leader>x", "<cmd>!chmod +x %<CR>",{silent = true})
 vim.keymap.set("n","<leader>pv", ":%s/\\<<C-r><C-w>\\>/<C-r><C-w>/gI<Left><Left><Left>")
 vim.keymap.set("n",";", ":")
 vim.keymap.set("n","4", "$")
+vim.keymap.set("v","<leader>a", ":norm A ; <CR>")
 
 
 -- greatest remap ever
@@ -38,5 +39,9 @@ vim.keymap.set("n","cf","<cmd>tabe ~/.config/nvim/<CR>")
 vim.keymap.set("n","<leader>cs","<cmd>luafile ~/.config/nvim/init.lua<CR>")
 vim.keymap.set("n","<leader>sr","<cmd>luafile % <CR>")
 
+
+vim.keymap.set("n", "<leader>so", function()
+    vim.cmd("so")
+end)
 
 
