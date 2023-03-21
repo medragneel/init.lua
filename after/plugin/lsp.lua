@@ -5,11 +5,10 @@ lsp.preset("recommended")
 lsp.ensure_installed({
     'tsserver',
     'eslint',
-    'sumneko_lua',
     'rust_analyzer',
     'clangd',
 })
-lsp.configure('sumneko_lua', {
+lsp.configure('lua-language-server', {
     settings = {
         Lua = {
             diagnostics = {
@@ -31,11 +30,6 @@ local cmp_mappings = lsp.defaults.cmp_mappings({
 
 cmp_mappings['<Tab>'] = nil
 cmp_mappings['<S-Tab>'] = nil
-lsp.defaults.cmp_config({
-    experimental = {
-        ghost_text = true,
-    },
-})
 
 
 lsp.setup_nvim_cmp({
@@ -67,7 +61,7 @@ lsp.on_attach(function(_, bufnr)
     vim.keymap.set("n", "<leader>vrr", vim.lsp.buf.references, opts)
     vim.keymap.set("n", "<leader>vrn", vim.lsp.buf.rename, opts)
     vim.keymap.set("i", "<C-h>", vim.lsp.buf.signature_help, opts)
-    vim.keymap.set('n', '<space>f', vim.lsp.buf.formatting, opts)
+    -- vim.keymap.set('n', '<space>f', vim.lsp.buf.formatting)
 end)
 
 lsp.setup()

@@ -38,10 +38,11 @@ vim.keymap.set("n","<leader>v","\"+p")
 vim.keymap.set("n","cf","<cmd>tabe ~/.config/nvim/<CR>")
 vim.keymap.set("n","<leader>cs","<cmd>luafile ~/.config/nvim/init.lua<CR>")
 vim.keymap.set("n","<leader>sr","<cmd>luafile % <CR>")
+vim.keymap.set("n", "<space>f", vim.lsp.buf.format)
 
 
-vim.keymap.set("n", "<leader>so", function()
-    vim.cmd("so")
-end)
+-- vim.keymap.set("n", "<leader>so", function()
+--     vim.cmd("so")
+-- end)
 
 
