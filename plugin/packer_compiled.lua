@@ -191,11 +191,6 @@ _G.packer_plugins = {
     path = "/home/mshadow/.local/share/nvim/site/pack/packer/start/popup.nvim",
     url = "https://github.com/nvim-lua/popup.nvim"
   },
-  ["telescope-media-files.nvim"] = {
-    loaded = true,
-    path = "/home/mshadow/.local/share/nvim/site/pack/packer/start/telescope-media-files.nvim",
-    url = "https://github.com/nvim-telescope/telescope-media-files.nvim"
-  },
   ["telescope.nvim"] = {
     loaded = true,
     path = "/home/mshadow/.local/share/nvim/site/pack/packer/start/telescope.nvim",
@@ -210,6 +205,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/mshadow/.local/share/nvim/site/pack/packer/start/vCoolor.vim",
     url = "https://github.com/KabbAmine/vCoolor.vim"
+  },
+  ["vim-fugitive"] = {
+    loaded = true,
+    path = "/home/mshadow/.local/share/nvim/site/pack/packer/start/vim-fugitive",
+    url = "https://github.com/tpope/vim-fugitive"
   },
   ["vim-surround"] = {
     loaded = true,
