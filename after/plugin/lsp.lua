@@ -31,6 +31,12 @@ local cmp_mappings = lsp.defaults.cmp_mappings({
 cmp_mappings['<Tab>'] = nil
 cmp_mappings['<S-Tab>'] = nil
 
+cmp.setup({
+    window = {
+        completion = cmp.config.window.bordered(),
+        documentation = cmp.config.window.bordered(),
+    },
+})
 
 lsp.setup_nvim_cmp({
     mapping = cmp_mappings
@@ -68,5 +74,3 @@ lsp.setup()
 vim.diagnostic.config({
     virtual_text = true
 })
-
-
