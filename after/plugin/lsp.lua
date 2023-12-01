@@ -2,34 +2,49 @@ local lsp = require("lsp-zero")
 
 lsp.preset("recommended")
 
-lsp.ensure_installed({
-    'tsserver',
-    'eslint',
-    'rust_analyzer',
-    'clangd',
-})
-lsp.configure('lua-language-server', {
-    settings = {
-        Lua = {
-            diagnostics = {
-                globals = { 'vim' }
-            }
-        }
-    }
+-- lsp.ensure_installed({
+--     'tsserver',
+--     'eslint',
+--     'rust_analyzer',
+--     'clangd',
+-- })
+
+-- lsp.configure('lua_ls', {
+--     settings = {
+--         Lua = {
+--             diagnostics = {
+--                 globals = { 'vim' }
+--             }
+--         }
+--     }
+-- })
+
+
+require('mason').setup()
+require('mason-lspconfig').setup({
+    ensure_installed = {},
+    handlers = {
+        lsp.default_setup,
+    },
 })
 
 
 local _, cmp = pcall(require, "cmp")
 local cmp_select = { behavior = cmp.SelectBehavior.Select }
-local cmp_mappings = lsp.defaults.cmp_mappings({
-    ['<C-p>'] = cmp.mapping.select_prev_item(cmp_select),
-    ['<C-n>'] = cmp.mapping.select_next_item(cmp_select),
-    ['<C-y>'] = cmp.mapping.confirm({ select = true }),
-    ["<C-Space>"] = cmp.mapping.complete(),
+cmp.setup({
+    sources = {
+        { name = 'path' },
+        { name = 'nvim_lsp' },
+        { name = 'nvim_lua' },
+    },
+    formatting = lsp.cmp_format(),
+    mapping = cmp.mapping.preset.insert({
+        ['<C-p>'] = cmp.mapping.select_prev_item(cmp_select),
+        ['<C-n>'] = cmp.mapping.select_next_item(cmp_select),
+        ['<CR>'] = cmp.mapping.confirm({ select = true }),
+        ['<Tab>'] = cmp.mapping.complete(),
+    }),
 })
-
-cmp_mappings['<Tab>'] = nil
-cmp_mappings['<S-Tab>'] = nil
 
 cmp.setup({
     window = {
@@ -38,9 +53,11 @@ cmp.setup({
     },
 })
 
-lsp.setup_nvim_cmp({
-    mapping = cmp_mappings
-})
+-- lsp.setup_nvim_cmp({
+--     mapping = cmp_mappings
+-- })
+
+
 
 lsp.set_preferences({
     suggest_lsp_servers = false,
@@ -69,7 +86,6 @@ lsp.on_attach(function(_, bufnr)
     vim.keymap.set("i", "<C-h>", vim.lsp.buf.signature_help, opts)
     -- vim.keymap.set('n', '<space>f', vim.lsp.buf.formatting)
 end)
-
 lsp.setup()
 vim.diagnostic.config({
     virtual_text = true

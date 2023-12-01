@@ -3,6 +3,7 @@ print("Welcome Medmh")
 
 local augroup = vim.api.nvim_create_augroup
 
+
 local mgrp = augroup('mgrp', {})
 
 local autocmd = vim.api.nvim_create_autocmd
