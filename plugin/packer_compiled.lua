@@ -120,6 +120,11 @@ _G.packer_plugins = {
     path = "C:\\Users\\mshadow\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\friendly-snippets",
     url = "https://github.com/rafamadriz/friendly-snippets"
   },
+  harpoon = {
+    loaded = true,
+    path = "/home/mshadow/.local/share/nvim/site/pack/packer/start/harpoon",
+    url = "https://github.com/ThePrimeagen/harpoon"
+  },
   ["lsp-zero.nvim"] = {
     loaded = true,
     path = "C:\\Users\\mshadow\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\lsp-zero.nvim",
@@ -177,9 +182,14 @@ _G.packer_plugins = {
     url = "https://github.com/nvim-tree/nvim-web-devicons"
   },
   ["oil.nvim"] = {
+<<<<<<< HEAD
     config = { "\27LJ\2\n1\0\0\3\0\3\0\0066\0\0\0'\2\1\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\nsetup\boil\frequire\0" },
     loaded = true,
     path = "C:\\Users\\mshadow\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\oil.nvim",
+=======
+    loaded = true,
+    path = "/home/mshadow/.local/share/nvim/site/pack/packer/start/oil.nvim",
+>>>>>>> b955e4c (init.lua@1.7)
     url = "https://github.com/stevearc/oil.nvim"
   },
   ["packer.nvim"] = {
