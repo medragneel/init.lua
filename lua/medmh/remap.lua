@@ -1,7 +1,7 @@
 
 vim.g.mapleader = ","
 --vim.api.nvim_set_keymap("n","<leader>e","<cmd>tabe <CR><cmd>Ex<CR>")
--- vim.keymap.set("n","<leader>e","<cmd>tabe <CR><cmd>Ex<CR>")
+vim.keymap.set("n","<leader>e","<cmd>tabe .<CR>")
 vim.keymap.set("n","<leader>s","<cmd>w<CR>")
 vim.keymap.set("n","<leader>`","<cmd>q!<CR>")
 vim.keymap.set("n","<leader>h","gT<CR>")

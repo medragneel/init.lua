@@ -1,8 +1,4 @@
-<<<<<<< HEAD
-require("oil").setup()
 vim.keymap.set("n", "-", "<CMD>Oil<CR>", { desc = "Open parent directory" })
-=======
-vim.keymap.set("n", "<leader>e", "<CMD>Oil<CR>", { desc = "Open parent directory" })
 
 require("oil").setup({
     default_file_explorer = true,
@@ -136,4 +132,3 @@ require("oil").setup({
         },
     },
 })
->>>>>>> b955e4c (init.lua@1.7)

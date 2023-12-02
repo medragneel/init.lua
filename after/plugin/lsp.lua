@@ -37,7 +37,7 @@ cmp.setup({
         { name = 'nvim_lsp' },
         { name = 'nvim_lua' },
     },
-    formatting = lsp.cmp_format(),
+    -- formatting = lsp.cmp_format(),
     mapping = cmp.mapping.preset.insert({
         ['<C-p>'] = cmp.mapping.select_prev_item(cmp_select),
         ['<C-n>'] = cmp.mapping.select_next_item(cmp_select),
@@ -49,7 +49,7 @@ cmp.setup({
 cmp.setup({
     window = {
         completion = cmp.config.window.bordered(),
-        documentation = cmp.config.window.bordered(),
+        documentation = cmp.config.window.bordered(),lsp
     },
 })
 

@@ -2,15 +2,7 @@ vim.cmd [[packadd packer.nvim]]
 return require('packer').startup(function(use)
     use 'wbthomason/packer.nvim'
 
-<<<<<<< HEAD
-    -- oil.nvim
-    use({
-        "stevearc/oil.nvim",
-        config = function()
-            require("oil").setup()
-        end,
-    })
-=======
+
     use({
         "stevearc/oil.nvim",
     })
@@ -22,7 +14,6 @@ return require('packer').startup(function(use)
         branch = "harpoon2",
         requires = { { "nvim-lua/plenary.nvim" } }
     }
->>>>>>> b955e4c (init.lua@1.7)
     use {
         'nvim-telescope/telescope.nvim', tag = '0.1.4',
         -- or                            , branch = '0.1.x',
