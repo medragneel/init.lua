@@ -1,5 +1,9 @@
-require('lualine').setup {
-    options = {
+    return {
+	"nvim-lualine/lualine.nvim",
+	dependencies = { "nvim-tree/nvim-web-devicons" },
+	config = function()
+		require("lualine").setup({
+                options = {
         icons_enabled = false,
         theme = 'auto',
         component_separators = { left = '', right = '' },
@@ -47,4 +51,9 @@ require('lualine').setup {
     },
     tabline = {},
     extensions = {"quickfix"},
+
+        })
+	end,
 }
+
+
